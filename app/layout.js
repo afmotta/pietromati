@@ -1,4 +1,4 @@
-import { Comforter_Brush, Inter, Merriweather } from "next/font/google";
+import { Comforter, Inter, Merriweather } from "next/font/google";
 import "./globals.css";
 
 const sans = Inter({
@@ -12,7 +12,7 @@ const serif = Merriweather({
   display: "swap",
   variable: "--font-serif",
 });
-const handwrite = Comforter_Brush({
+const handwrite = Comforter({
   subsets: ["latin"],
   weight: "400",
   display: "swap",

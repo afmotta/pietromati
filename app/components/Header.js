@@ -41,7 +41,7 @@ export function Header() {
             <a
               key={item.name}
               href={item.href}
-              className='text-sm font-semibold leading-6 text-white'
+              className='text-base font-semibold leading-6 text-white hover:text-main-lighter'
             >
               {item.name}
             </a>
@@ -58,14 +58,6 @@ export function Header() {
         <div className='fixed inset-0 z-50' />
         <Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10'>
           <div className='flex items-center justify-between'>
-            <a href='#' className='-m-1.5 p-1.5'>
-              <span className='sr-only'>Your Company</span>
-              <img
-                className='h-8 w-auto'
-                src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500'
-                alt=''
-              />
-            </a>
             <button
               type='button'
               className='-m-2.5 rounded-md p-2.5 text-gray-400'

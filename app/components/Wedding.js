@@ -3,7 +3,7 @@ import { MapPinIcon, ClockIcon, StarIcon } from "@heroicons/react/20/solid";
 const features = [
   {
     name: "Indirizzo",
-    description: "Napoli, Vomero, Via Motta n. 224.",
+    description: "Napoli, Vomero, Via Alessandro Scarlatti 29.",
     icon: MapPinIcon,
   },
   {
@@ -54,8 +54,8 @@ export function Wedding() {
             </div>
           </div>
           <img
-            src='https://images.unsplash.com/photo-1508985307703-52d13b2b06b3?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-            alt='Product screenshot'
+            src='/napoli.jpg'
+            alt='Napoli'
             className='w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0'
             width={2432}
             height={1442}

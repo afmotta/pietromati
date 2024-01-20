@@ -29,7 +29,7 @@ export function Wedding() {
               <h3 className='text-base font-semibold leading-7 text-main'>
                 Santa Maria presso San Satiro
               </h3>
-              <h2 className='mt-2 font-serif text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+              <h2 className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
                 La Cerimonia
               </h2>
               <p className='mt-6 text-lg leading-8 text-gray-600'>

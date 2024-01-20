@@ -10,7 +10,7 @@ export function Party() {
             <h3 className='text-base font-semibold leading-7 text-main'>
               Torre dei Saraceni
             </h3>
-            <h2 className='mt-2 text-3xl font-serif font-bold tracking-tight text-gray-800 sm:text-4xl'>
+            <h2 className='mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl'>
               Il Ricevimento
             </h2>
             <p className='mt-6 text-xl leading-8 text-gray-800'>

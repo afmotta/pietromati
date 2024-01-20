@@ -1,16 +1,10 @@
-import { Comforter, Inter, Merriweather } from "next/font/google";
+import { Comforter, Inter } from "next/font/google";
 import "./globals.css";
 
 const sans = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
-});
-const serif = Merriweather({
-  subsets: ["latin"],
-  weight: "300",
-  display: "swap",
-  variable: "--font-serif",
 });
 const handwrite = Comforter({
   subsets: ["latin"],
@@ -26,10 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang='en'
-      className={`${sans.variable} ${serif.variable} ${handwrite.variable}`}
-    >
+    <html lang='en' className={`${sans.variable} ${handwrite.variable}`}>
       <body>{children}</body>
     </html>
   );

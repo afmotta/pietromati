@@ -39,7 +39,7 @@ export function Accomodations() {
           <h3 className='text-base font-semibold leading-7 text-main'>
             Dormire a Napoli
           </h3>
-          <h2 className='mt-2 text-3xl font-serif font-bold'>Pernottamento</h2>
+          <h2 className='mt-2 text-3xl font-bold'>Pernottamento</h2>
           <p className='mt-6 text-lg leading-8 text-gray-600'>
             Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate
             id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,

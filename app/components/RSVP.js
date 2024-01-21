@@ -18,7 +18,7 @@ export function RSVP() {
     >
       <div className='mx-auto max-w-2xl text-center'>
         <h2 className='text-3xl font-handwrite font-bold tracking-tight text-main sm:text-6xl'>
-          RSVP
+          R S V P
         </h2>
         <p className='mt-2 text-lg leading-8 text-gray-600'>
           Aute magna irure deserunt veniam aliqua magna enim voluptate.

@@ -10,7 +10,7 @@ export const Hero = () => (
     <div className='mx-auto py-32 sm:py-48 lg:py-56'>
       <div className='text-center flex items-center flex-col'>
         <h1
-          className={`text-6xl font-handwrite tracking-tight text-main sm:text-9xl`}
+          className={`text-8xl font-handwrite tracking-tight text-main sm:text-[12rem]`}
         >
           Pietro e MariaTeresa
         </h1>

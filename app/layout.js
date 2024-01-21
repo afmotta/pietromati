@@ -1,5 +1,5 @@
 import {
-  Comforter as Handwrite,
+  Allison as Handwrite,
   Inter as Sans,
 } from "next/font/google";
 import "./globals.css";

@@ -10,6 +10,7 @@ const sans = Sans({
   variable: "--font-sans",
 });
 const handwrite = Handwrite({
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-handwrite",
 });

@@ -5,7 +5,7 @@ export const Hero = () => (
     <img
       src='/hero.jpg'
       alt=''
-      className='absolute inset-0 -z-10 h-full w-full object-cover grayscale-[40%]'
+      className='absolute inset-0 -z-10 h-full w-full object-cover grayscale-[70%]'
     />
     <div className='mx-auto py-32 sm:py-48 lg:py-56'>
       <div className='text-center flex items-center flex-col'>

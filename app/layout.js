@@ -1,14 +1,15 @@
-import { Comforter, Inter } from "next/font/google";
+import {
+  Comforter as Handwrite,
+  Josefin_Sans as Sans,
+} from "next/font/google";
 import "./globals.css";
 
-const sans = Inter({
+const sans = Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
 });
-const handwrite = Comforter({
-  subsets: ["latin"],
-  weight: "400",
+const handwrite = Handwrite({
   display: "swap",
   variable: "--font-handwrite",
 });

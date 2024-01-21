@@ -1,3 +1,5 @@
+import { SectionHeader } from ".";
+
 export function Party() {
   return (
     <div
@@ -7,12 +9,11 @@ export function Party() {
       <div className='mx-auto max-w-7xl px-6 lg:flex lg:px-8'>
         <div className='mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8'>
           <div className='lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8'>
-            <h3 className='text-base font-semibold leading-7 text-main'>
-              Torre dei Saraceni
-            </h3>
-            <h2 className='mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl'>
-              Il Ricevimento
-            </h2>
+            <SectionHeader
+              title='Il Ricevimento'
+              subtitle='Torre dei Saraceni'
+            />
+
             <p className='mt-6 text-xl leading-8 text-gray-800'>
               Quasi est quaerat. Sit molestiae et. Provident ad dolorem
               occaecati eos iste. Soluta rerum quidem minus ut molestiae velit

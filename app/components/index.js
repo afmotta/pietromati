@@ -8,3 +8,4 @@ export * from "./Palette";
 export * from "./Party";
 export * from "./RSVP";
 export * from "./Wedding";
+export * from "./SectionHeader";

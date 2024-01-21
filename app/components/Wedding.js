@@ -27,7 +27,7 @@ export function Wedding() {
           <div className='lg:pr-8 lg:pt-4'>
             <div className='lg:max-w-lg'>
               <h3 className='text-base font-semibold leading-7 text-main'>
-                Santa Maria presso San Satiro
+                Sacro Cuore di Gesù
               </h3>
               <h2 className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
                 La Cerimonia
@@ -56,7 +56,7 @@ export function Wedding() {
           <img
             src='/napoli.jpg'
             alt='Napoli'
-            className='w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0'
+            className='w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem] md:-ml-4 lg:-ml-0 -translate-x-[55%] sm:translate-x-0'
             width={2432}
             height={1442}
           />

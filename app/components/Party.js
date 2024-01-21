@@ -40,11 +40,11 @@ export function Party() {
                   className='aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover'
                 />
               </div>
-              <div className='hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none'>
+              <div className='flex sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none'>
                 <img
                   src='/party-2.jpg'
                   alt=''
-                  className='aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover'
+                  className='aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover translate-x-[30%] md:translate-x-0'
                 />
               </div>
             </div>

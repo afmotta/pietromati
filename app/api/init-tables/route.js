@@ -9,6 +9,7 @@ export async function GET() {
       await sql`ALTER TABLE rsvp ADD CONSTRAINT rsvp_pk PRIMARY KEY (id);`;
     return NextResponse.json({ createRsvp, addIndex }, { status: 200 });
   } catch (error) {
+    console.error(error)
     return NextResponse.json({ error }, { status: 500 });
   }
 }

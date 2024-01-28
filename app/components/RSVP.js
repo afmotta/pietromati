@@ -14,14 +14,14 @@ export function RSVP() {
     watch,
   } = useForm();
 
-  const isComing = watch("is-coming", true);
+  const isComing = watch("isComing", true);
 
   async function onSubmit(data) {
     console.log("DATA", data);
     return fetch("/api/rsvp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, isComing, needsTransportation }),
+      body: JSON.stringify({ ...data, needsTransportation }),
     });
   }
 
@@ -35,8 +35,9 @@ export function RSVP() {
           R S V P
         </h2>
         <p className='mt-2 text-lg leading-8 text-gray-600'>
-          Compilate questa sezione entro il <strong>30 giugno</strong> per
-          confermare la vostra presenza in questo giorno speciale.
+          Per favore, compilate questa sezione entro il{" "}
+          <strong>30 giugno</strong> per confermare la vostra presenza in questo
+          giorno speciale.
         </p>
       </div>
       <form
@@ -63,30 +64,32 @@ export function RSVP() {
             <label className='text-base font-semibold text-gray-900 leading-6'>
               Parteciperai al nostro matrimonio?
             </label>
-            <fieldset className='mt-4' {...register("is-coming")}>
+            <fieldset className='mt-4' {...register("isComing")}>
               <legend className='sr-only'>Notification method</legend>
               <div className='space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0'>
                 <div className='flex items-center'>
                   <input
                     id='true'
-                    name='is-coming'
+                    name='isComing'
                     type='radio'
                     defaultChecked='true'
                     className='h-4 w-4 border-gray-300 text-main focus:ring-main'
+                    value={true}
                   />
                   <label
                     htmlFor='true'
                     className='ml-3 block text-sm font-medium leading-6 text-gray-900'
                   >
-                    Si!
+                    Sì!
                   </label>
                 </div>
                 <div className='flex items-center'>
                   <input
                     id='false'
-                    name='is-coming'
+                    name='isComing'
                     type='radio'
                     className='h-4 w-4 border-gray-300 text-main focus:ring-main'
+                    value={false}
                   />
                   <label
                     htmlFor='false'

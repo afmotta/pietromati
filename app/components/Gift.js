@@ -2,7 +2,7 @@
 import { useCallback, useState } from "react";
 import { Button } from "../components";
 
-const IBAN = "IT98O0306933590100000010072";
+const IBAN = "LT413250075511093661";
 export function Gift() {
   const [copied, setCopied] = useState(false);
   const cb = useCallback(() => {
@@ -24,7 +24,7 @@ export function Gift() {
                 Il regalo più bello è la vostra presenza! <br />
                 Se desiderate contribuire alla nascita della nostra famiglia,
                 potete farlo tramite: <br />
-                IBAN {IBAN}, intestato a Pietro Paraboni
+                IBAN {IBAN}, intestato a Pietro Paraboni e Maria Teresa Nicastro.
               </p>
               <div className='width-full mt-8'>
                 <Button onClick={cb}>

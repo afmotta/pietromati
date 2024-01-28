@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
+    await sql`DROP TABLE rsvp`;
     const createRsvp =
       await sql`CREATE TABLE rsvp (id uuid NOT NULL DEFAULT gen_random_uuid(), name varchar, count smallint, email varchar, phone varchar, is_coming boolean DEFAULT true, needs_transportation boolean DEFAULT false, notes varchar);`;
     const addIndex =

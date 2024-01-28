@@ -16,7 +16,7 @@ export function Gift() {
         <div className='mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32'>
           <div className='mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center'>
             <div className='w-full max-w-xl lg:shrink-0 xl:max-w-2xl'>
-              <h1 className='text-4xl font-sans font-light tracking-tight text-gray-900 sm:text-6xl'>
+              <h1 className='text-4xl font-sans font-base tracking-tight text-gray-900 sm:text-6xl'>
                 L&#8217; inizio della nostra vita{" "}
                 <span className='text-main'>insieme</span>...
               </h1>

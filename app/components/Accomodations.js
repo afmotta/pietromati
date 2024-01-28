@@ -118,7 +118,7 @@ const locations = [
 
 function Accomodation({ name, address, phone, email, website }) {
   return (
-    <div className="hover:bg-main-lighter">
+    <div className='hover:bg-main-lighter'>
       <h3 className='border-l border-main pl-6 font-semibold text-gray-900 '>
         {name}
       </h3>
@@ -133,19 +133,19 @@ function Accomodation({ name, address, phone, email, website }) {
 
 export function Accomodations() {
   return (
-    <div id='pernottamento' className='bg-white py-24 sm:py-32 '>
+    <div id='pernottamento' className='bg-gray-100 py-24 sm:py-32 '>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-2xl lg:mx-0'>
-          <SectionHeader title='Il Pernottamento' subtitle='Dormire a Napoli' />
+          <SectionHeader title='Il pernottamento' subtitle='Dormire a Napoli' />
+          <p className='mt-6 text-lg leading-8 text-gray-600'>
+            Consigliamo a chi viene da fuori di alloggiare nel quartiere Vomero:
+            in questo modo, potrete raggiungere a piedi la cerimonia ed
+            usufruire della navetta. Inoltre, questo quartiere è un ottimo punto
+            di partenza per esplorare Napoli. <br /> Vi lasciamo qualche
+            suggerimento e link di hotel e bed&breakfast in zona:
+          </p>
         </div>
-        <p className='mt-6 text-lg leading-8 text-gray-600'>
-          Consigliamo a chi viene da fuori di alloggiare nel quartiere Vomero:
-          in questo modo, potrete raggiungere a piedi la cerimonia ed usufruire
-          della navetta. Inoltre, questo quartiere è un ottimo punto di partenza
-          per esplorare Napoli. <br /> Vi lasciamo qualche suggerimento e link di hotel
-          e bed&breakfast in zona:
-        </p>
-        <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-4'>
+        <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4'>
           {locations.map((i) => {
             return i.website ? (
               <a href={i.website} target='_blank' key={i.name}>

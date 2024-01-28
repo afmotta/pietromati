@@ -27,8 +27,8 @@ export function Wedding() {
           <div className='lg:pr-8 lg:pt-4'>
             <div className='lg:max-w-lg'>
               <SectionHeader
-                title='La Cerimonia'
-                subtitle='Sacro Cuore di Gesù'
+                title='La cerimonia'
+                subtitle='Chiesa del Sacro Cuore di Gesù'
               />
               <p className='mt-6 text-lg leading-8 text-gray-600'>
                 La cerimonia si svolgerà presso la Chiesa salesiana del Sacro

@@ -4,7 +4,7 @@ import {
   Accomodations,
   Header,
   Hero,
-  Gift2,
+  Gift,
   Wedding,
   RSVP,
   Party,
@@ -20,7 +20,7 @@ export default async function Home() {
       <Party />
       <RSVP />
       <Accomodations />
-      <Gift2 />
+      <Gift />
       {/* <Palette /> */}
     </>
   );

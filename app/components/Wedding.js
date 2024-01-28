@@ -3,18 +3,18 @@ import { SectionHeader } from ".";
 const features = [
   {
     name: "Indirizzo",
-    description: "Napoli, Vomero, Via Alessandro Scarlatti 29.",
+    description: "Via Alessandro Scarlatti 29, Napoli",
     icon: MapPinIcon,
   },
   {
     name: "Orario",
-    description: "10:30",
+    description: "15:30",
     icon: ClockIcon,
   },
   {
-    name: "Suggerimenti",
+    name: "Parcheggio",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      "È possibile parcheggiare l’auto nel cortile dell’oratorio adiacente alla Chiesa.",
     icon: StarIcon,
   },
 ];
@@ -26,11 +26,13 @@ export function Wedding() {
         <div className='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2'>
           <div className='lg:pr-8 lg:pt-4'>
             <div className='lg:max-w-lg'>
-              <SectionHeader title="La Cerimonia" subtitle="Sacro Cuore di Gesù" />
+              <SectionHeader
+                title='La Cerimonia'
+                subtitle='Sacro Cuore di Gesù'
+              />
               <p className='mt-6 text-lg leading-8 text-gray-600'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                La cerimonia si svolgerà presso la Chiesa salesiana del Sacro
+                Cuore di Gesù, nel quartiere Vomero.
               </p>
               <dl className='mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none'>
                 {features.map((feature) => (

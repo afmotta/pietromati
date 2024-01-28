@@ -41,7 +41,7 @@ export function Header() {
             <a
               key={item.name}
               href={item.href}
-              className='text-base font-semibold leading-6 text-white hover:text-main-lighter'
+              className='text-base font-semibold leading-6 text-gray-500 hover:text-main-lighter'
             >
               {item.name}
             </a>

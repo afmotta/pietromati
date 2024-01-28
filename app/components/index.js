@@ -3,7 +3,6 @@ export * from "./Button";
 export * from "./Header";
 export * from "./Hero";
 export * from "./Gift";
-export * from "./Gift2";
 export * from "./Palette";
 export * from "./Party";
 export * from "./RSVP";

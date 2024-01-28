@@ -1,4 +1,28 @@
+import { MapPinIcon, MapIcon, StarIcon } from "@heroicons/react/20/solid";
 import { SectionHeader } from ".";
+
+const features = [
+  {
+    name: "Indirizzo",
+    description: "Via Salvatore Nullo 176, Giugliano in Campania (NA)",
+    icon: MapPinIcon,
+  },
+  {
+    name: "Come arrivare",
+    description:
+      "Imboccare la tangenziale A56 in direzione Pozzuoli. Prendere l’uscita Licola e proseguire su via S. Nullo per circa 1.5 km.",
+    icon: MapIcon,
+  },
+  {
+    name: "Navetta",
+    description: `Per chi non è munito di auto abbiamo previsto un servizio navetta
+      per raggiungere il luogo del ricevimento, che dopo la festa vi
+      riporterà al Vomero. Non dimenticate di segnalarci se avete
+      bisogno di un passaggio quando confermate la vostra
+      partecipazione!`,
+    icon: StarIcon,
+  },
+];
 
 export function Party() {
   return (
@@ -14,16 +38,25 @@ export function Party() {
               subtitle='Torre dei Saraceni'
             />
 
-            <p className='mt-6 text-xl leading-8 text-gray-800'>
-              Quasi est quaerat. Sit molestiae et. Provident ad dolorem
-              occaecati eos iste. Soluta rerum quidem minus ut molestiae velit
-              error quod. Excepturi quidem expedita molestias quas.
+            <p className='mt-6 text-lg leading-8 text-gray-600'>
+              Dopo la cerimonia festeggeremo insieme nella cornice di Torre San
+              Severino. Non vediamo l’ora di ballare, cantare e divertirci con
+              voi!
             </p>
-            <p className='mt-6 text-base leading-7 text-gray-800'>
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat. Quasi aperiam sit non sit neque reprehenderit.
-            </p>
+            <dl className='mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none'>
+              {features.map((feature) => (
+                <div key={feature.name} className='relative pl-9'>
+                  <dt className='inline font-semibold text-gray-900'>
+                    <feature.icon
+                      className='absolute left-1 top-1 h-5 w-5 text-main'
+                      aria-hidden='true'
+                    />
+                    {feature.name}
+                  </dt>{" "}
+                  <dd className='inline'>{feature.description}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <div className='flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents'>
             <div className='w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end'>

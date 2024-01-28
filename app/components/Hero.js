@@ -5,7 +5,7 @@ export const Hero = () => (
     <img
       src='/hero.jpg'
       alt=''
-      className='absolute inset-0 -z-10 h-full w-full object-cover grayscale-[70%]'
+      className='absolute inset-0 -z-10 h-full w-full object-cover grayscale-[20%]'
     />
     <div className='mx-auto py-32 sm:py-48 lg:py-56'>
       <div className='text-center flex items-center flex-col'>
@@ -13,9 +13,9 @@ export const Hero = () => (
           Pietro e MariaTeresa
         </h1>
         <p className='mt-6 text-lg max-w-xl leading-8 text-white'>
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
-          aliqua.
+          Benvenuti! In questa pagina condivideremo con voi tutte le
+          informazioni riguardanti il nostro Matrimonio. <br /> Grazie di
+          accompagnarci in questo viaggio!
         </p>
         <div className='mt-10 flex items-center justify-center gap-x-6'>
           <a href='#rsvp'>

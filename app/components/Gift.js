@@ -1,57 +1,48 @@
+"use client";
+import { useCallback, useState } from "react";
+import { Button } from "../components";
+
+const IBAN = "IT98O0306933590100000010072";
 export function Gift() {
+  const [copied, setCopied] = useState(false);
+  const cb = useCallback(() => {
+    navigator.clipboard.writeText(IBAN);
+    setCopied(true);
+  }, [setCopied]);
+
   return (
-    <div id='lista-nozze' className='bg-white py-16 sm:py-24'>
-      <div className='mx-auto max-w-7xl sm:px-6 lg:px-8'>
-        <div className='relative isolate overflow-hidden bg-gray-100 px-6 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:py-32'>
-          <h2 className='mx-auto max-w-2xl text-center text-3xl font-bold tracking-tight text-main sm:text-4xl'>
-            Aiutaci ad iniziare la nostra vita insieme.
-          </h2>
-          <p className='mx-auto mt-2 max-w-xl text-center text-lg leading-8 text-gray-500'>
-            Reprehenderit ad esse et non officia in nulla. Id proident tempor
-            incididunt nostrud nulla et culpa.
-          </p>
-          <form className='mx-auto mt-10 flex max-w-md gap-x-4'>
-            <label htmlFor='iban' className='sr-only'>
-              Email address
-            </label>
-            <input
-              id='iban'
-              value='IT1231321312321'
-              className='min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-gray-500 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6'
-            />
-            <button
-              type='submit'
-              className='flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
-            >
-              Copia IBAN
-            </button>
-          </form>
-          <svg
-            viewBox='0 0 1024 1024'
-            className='absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2'
-            aria-hidden='true'
-          >
-            <circle
-              cx={512}
-              cy={512}
-              r={512}
-              fill='url(#759c1415-0410-454c-8f7c-9a820de03641)'
-              fillOpacity='0.7'
-            />
-            <defs>
-              <radialGradient
-                id='759c1415-0410-454c-8f7c-9a820de03641'
-                cx={0}
-                cy={0}
-                r={1}
-                gradientUnits='userSpaceOnUse'
-                gradientTransform='translate(512 512) rotate(90) scale(512)'
-              >
-                <stop stopColor='#BF1F6A' />
-                <stop offset={1} stopColor='#db7699' stopOpacity={0} />
-              </radialGradient>
-            </defs>
-          </svg>
+    <div className='relative'>
+      <div className='overflow-hidden'>
+        <div className='mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32'>
+          <div className='mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center'>
+            <div className='w-full max-w-xl lg:shrink-0 xl:max-w-2xl'>
+              <h1 className='text-4xl font-sans font-light tracking-tight text-gray-900 sm:text-6xl'>
+                L&#8217; inizio della nostra vita{" "}
+                <span className='text-main'>insieme</span>...
+              </h1>
+              <p className='relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none'>
+                Il regalo più bello è la vostra presenza! <br />
+                Se desiderate contribuire alla nascita della nostra famiglia,
+                potete farlo tramite: <br />
+                IBAN {IBAN}, intestato a Pietro Paraboni
+              </p>
+              <div className='width-full mt-8'>
+                <Button onClick={cb}>
+                  {!copied ? "Copia IBAN" : "IBAN copiato negli appunti"}
+                </Button>
+              </div>
+            </div>
+            <div className='mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0'>
+              <div className='relative'>
+                <img
+                  src='/gift.jpg'
+                  alt=''
+                  className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
+                />
+                <div className='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10' />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

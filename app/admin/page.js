@@ -87,7 +87,7 @@ function Table({ rows }) {
                   </td>
                   <td className='px-3 py-4 text-sm text-gray-500'>{r.count}</td>
                   <td className='px-3 py-4 text-sm text-gray-500'>
-                    {person.role}
+                    {r.id}
                   </td>
                 </tr>
               ))}

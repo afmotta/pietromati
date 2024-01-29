@@ -8,8 +8,13 @@ async function getData() {
 }
 
 const people = [
-  { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-]
+  {
+    name: "Lindsay Walton",
+    title: "Front-end Developer",
+    email: "lindsay.walton@example.com",
+    role: "Member",
+  },
+];
 
 function Table({ rows }) {
   return (
@@ -80,9 +85,7 @@ function Table({ rows }) {
                   <td className='px-3 py-4 text-sm text-gray-500'>
                     {r.isComing}
                   </td>
-                  <td className='px-3 py-4 text-sm text-gray-500'>
-                    {r.count}
-                  </td>
+                  <td className='px-3 py-4 text-sm text-gray-500'>{r.count}</td>
                   <td className='px-3 py-4 text-sm text-gray-500'>
                     {person.role}
                   </td>
@@ -97,12 +100,7 @@ function Table({ rows }) {
 }
 
 export default async function Admin() {
-  const { rows } = await getData();
+  const { rows, rowCount } = await getData();
 
-  return (
-    <>
-      ADMIN: {data.count}
-      <Table rows={rows} />
-    </>
-  );
+  return <Table rows={rows} />;
 }

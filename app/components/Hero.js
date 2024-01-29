@@ -9,10 +9,10 @@ export const Hero = () => (
     />
     <div className='mx-auto py-32 sm:py-48 lg:py-56'>
       <div className='text-center flex items-center flex-col'>
-        <h1 className='text-5xl font-handwrite tracking-tight text-main sm:text-9xl'>
-          Pietro e MariaTeresa
-        </h1>
-        <div className='bg-gray-900/30 my-3 py-3 px-6 sm:px-3'>
+        <div className='bg-gray-900/30 my-3 pt-8 pb-6 px-6'>
+          <h1 className='text-5xl font-handwrite tracking-tight text-main sm:text-9xl'>
+            Pietro e MariaTeresa
+          </h1>
           <h2 className='text-xl font-sans font-extralight tracking-tight text-white sm:text-3xl uppercase'>
             21 Settembre 2024
           </h2>

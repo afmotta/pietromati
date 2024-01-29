@@ -97,12 +97,12 @@ function Table({ rows }) {
 }
 
 export default async function Admin() {
-  const data = await getData();
+  const { rows } = await getData();
 
   return (
     <>
       ADMIN: {data.count}
-      <Table />
+      <Table rows={rows} />
     </>
   );
 }

@@ -13,10 +13,10 @@ export const Hero = () => (
           Pietro e MariaTeresa
         </h1>
         <div className='bg-gray-900/30 my-3 py-3 px-6 sm:px-3'>
-          <h2 className='text-2xl font-sans font-extralight tracking-tight text-white sm:text-4xl uppercase'>
+          <h2 className='text-xl font-sans font-extralight tracking-tight text-white sm:text-3xl uppercase'>
             21 Settembre 2024
           </h2>
-          <h2 className='text-2xl font-sans font-extralight tracking-tight text-white sm:text-4xl uppercase'>
+          <h2 className='text-xl font-sans font-extralight tracking-tight text-white sm:text-3xl uppercase'>
             Napoli
           </h2>
         </div>

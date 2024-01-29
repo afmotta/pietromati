@@ -32,7 +32,8 @@ export function Wedding() {
               />
               <p className='mt-6 text-lg leading-8 text-gray-600'>
                 La cerimonia si svolgerà presso la Chiesa salesiana del Sacro
-                Cuore di Gesù, nel quartiere Vomero.
+                Cuore di Gesù, nel quartiere Vomero. <br /> Grazie di
+                accompagnarci in questo viaggio!
               </p>
               <dl className='mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none'>
                 {features.map((feature) => (

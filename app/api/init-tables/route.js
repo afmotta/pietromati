@@ -9,9 +9,17 @@ export async function GET() {
     // const addIndex =
     //   await sql`ALTER TABLE rsvp ADD CONSTRAINT rsvp_pk PRIMARY KEY (id);`;
     // return NextResponse.json({ createRsvp, addIndex }, { status: 200 });
-    return NextResponse.json({ msg: 'Currently disabled' }, { status: 200 });
+    await sql`CREATE OR REPLACE FUNCTION trigger_set_timestamp()
+    RETURNS TRIGGER AS $$
+    BEGIN
+      NEW.updated_at = NOW();
+      RETURN NEW;
+    END;
+    $$ LANGUAGE plpgsql;`;
+    await sql`ALTER TABLE rsvp ADD COLUMN created_at TIMESTAMPTZ NOT NULL DEFAULT NOW();`
+    return NextResponse.json({ msg: "Currently disabled" }, { status: 200 });
   } catch (error) {
-    console.error(error)
+    console.error(error);
     return NextResponse.json({ error }, { status: 500 });
   }
 }

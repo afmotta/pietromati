@@ -4,15 +4,23 @@ import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import { useForm } from "react-hook-form";
 
+function getButtonLabel(isSubmitting, isSubmitSuccessful) {
+  if (isSubmitting) return 'Invio in corso...'
+  if (isSubmitSuccessful) return 'Invio completato, grazie!'
+  return 'Invia'
+}
+
 export function RSVP() {
   const [needsTransportation, setNeedsTransportation] = useState(false);
 
   const {
     register,
     handleSubmit,
-    formState: { isValid },
+    formState: { isValid, isSubmitting, isSubmitSuccessful },
     watch,
   } = useForm();
+
+  const submitDisabled = !isValid || isSubmitting || isSubmitSuccessful;
 
   const isComing = watch("isComing", true);
 
@@ -204,9 +212,9 @@ export function RSVP() {
           <button
             type='submit'
             className='block w-full rounded-md bg-main px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-main-lighter hover:text-main-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200'
-            disabled={!isValid}
+            disabled={submitDisabled}
           >
-            Invia
+            {getButtonLabel(isSubmitting, isSubmitSuccessful)}
           </button>
         </div>
       </form>

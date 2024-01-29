@@ -13,11 +13,12 @@ export const Hero = () => (
           Pietro e MariaTeresa
         </h1>
         <div className='bg-gray-900/30 my-3 py-3 px-6 sm:px-3'>
-          <p className='text-lg max-w-xl leading-8 text-white'>
-            Benvenuti! In questa pagina condivideremo con voi tutte le
-            informazioni riguardanti il nostro matrimonio. <br /> Grazie di
-            accompagnarci in questo viaggio!
-          </p>
+          <h2 className='text-2xl font-sans font-extralight tracking-tight text-white sm:text-4xl uppercase'>
+            21 Settembre 2024
+          </h2>
+          <h2 className='text-2xl font-sans font-extralight tracking-tight text-white sm:text-4xl uppercase'>
+            Napoli
+          </h2>
         </div>
         <div className='mt-10 flex items-center justify-center gap-x-6'>
           <a href='#rsvp'>

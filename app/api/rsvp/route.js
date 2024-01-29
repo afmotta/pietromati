@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 const createInsertQuery = async (body) => {
   const { name, count, email, phone, isComing, needsTransportation, notes } =
     body;
-  return sql`INSERT INTO public.rsvp (name, count, email, phone, is_coming, needs_transportation, notes) VALUES(${name}, ${count}, ${email}, ${phone}, ${!!isComing}, ${needsTransportation}, ${notes});`;
+  return sql`INSERT INTO public.rsvp (name, count, email, phone, is_coming, needs_transportation, notes) VALUES(${name}, ${count || 0}, ${email}, ${phone}, ${!!isComing}, ${needsTransportation}, ${notes});`;
 };
 
-export async function GET(request) {
+export async function GET() {
   const data = await sql`SELECT * FROM public.rsvp`;
   return NextResponse.json(
     { rows: data.rows, count: data.rowCount },
@@ -21,6 +21,7 @@ export async function POST(request) {
     await createInsertQuery(data);
     return NextResponse.json({}, { status: 200 });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({ error }, { status: 500 });
   }
 }

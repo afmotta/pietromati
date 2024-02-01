@@ -1,4 +1,5 @@
 "use server";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { sql } from "@vercel/postgres";
 
 async function getData() {
@@ -6,15 +7,6 @@ async function getData() {
   const data = await sql`SELECT * FROM public.rsvp`;
   return { rows: data.rows, count: data.rowCount };
 }
-
-const people = [
-  {
-    name: "Lindsay Walton",
-    title: "Front-end Developer",
-    email: "lindsay.walton@example.com",
-    role: "Member",
-  },
-];
 
 function Table({ rows }) {
   return (
@@ -83,11 +75,21 @@ function Table({ rows }) {
                     <div className='absolute bottom-0 left-0 h-px w-screen bg-gray-100' />
                   </td>
                   <td className='px-3 py-4 text-sm text-gray-500'>
-                    {r.isComing}
+                    {r.is_coming ? (
+                      <CheckIcon className='h-5 w-5 text-green-500' />
+                    ) : (
+                      <XMarkIcon className='h-5 w-5 text-main' />
+                    )}
                   </td>
                   <td className='px-3 py-4 text-sm text-gray-500'>{r.count}</td>
+                  <td className='px-3 py-4 text-sm text-gray-500'>{r.email}</td>
+                  <td className='px-3 py-4 text-sm text-gray-500'>{r.phone}</td>
                   <td className='px-3 py-4 text-sm text-gray-500'>
-                    {r.id}
+                    {r.needs_transportation ? (
+                      <CheckIcon className='h-5 w-5 text-green-500' />
+                    ) : (
+                      <XMarkIcon className='h-5 w-5 text-main' />
+                    )}
                   </td>
                 </tr>
               ))}
@@ -99,8 +101,11 @@ function Table({ rows }) {
   );
 }
 
-export default async function Admin() {
-  const { rows, rowCount } = await getData();
+export default async function Admin({ searchParams }) {
+  if (searchParams.password !== process.env.VERCEL_ADMIN_PASSWORD) {
+    return <>Forbidden</>;
+  }
+  const { rows } = await getData();
 
   return <Table rows={rows} />;
 }

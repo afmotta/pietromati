@@ -11,7 +11,7 @@ async function getData() {
 function Table({ rows }) {
   return (
     <div>
-      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <div className='mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='sm:flex sm:items-center'>
           <div className='sm:flex-auto'>
             <h1 className='text-base font-semibold leading-6 text-gray-900'>
@@ -22,7 +22,7 @@ function Table({ rows }) {
         </div>
       </div>
       <div className='mt-8 flow-root overflow-hidden'>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+        <div className='mx-auto px-4 sm:px-6 lg:px-8'>
           <table className='w-full text-left'>
             <thead className='bg-white'>
               <tr>
@@ -31,8 +31,6 @@ function Table({ rows }) {
                   className='relative isolate py-3.5 pr-3 text-left text-sm font-semibold text-gray-900'
                 >
                   Nome
-                  <div className='absolute inset-y-0 right-full -z-10 w-screen border-b border-b-gray-200' />
-                  <div className='absolute inset-y-0 left-0 -z-10 w-screen border-b border-b-gray-200' />
                 </th>
                 <th
                   scope='col'
@@ -64,6 +62,12 @@ function Table({ rows }) {
                 >
                   Navetta
                 </th>
+                <th
+                  scope='col'
+                  className='px-3 py-3.5 text-left text-sm font-semibold text-gray-900'
+                >
+                  Note
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -91,6 +95,7 @@ function Table({ rows }) {
                       <XMarkIcon className='h-5 w-5 text-main' />
                     )}
                   </td>
+                  <td className='px-3 py-4 text-sm text-gray-500'>{r.notes}</td>
                 </tr>
               ))}
             </tbody>

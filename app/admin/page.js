@@ -17,7 +17,7 @@ export default async function Admin({ searchParams }) {
   if (searchParams.password !== process.env.VERCEL_ADMIN_PASSWORD) {
     return <>Forbidden</>;
   }
-  const page = parseInt(searchParams.page) ?? 1;
+  const page = parseInt(searchParams.page ?? '1') ?? 1;
 
   const { rows, count } = await getData(page);
 

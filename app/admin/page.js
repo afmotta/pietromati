@@ -1,116 +1,25 @@
 "use server";
-import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { sql } from "@vercel/postgres";
+import { Table } from "./Table";
 
-async function getData() {
+const PAGE_SIZE = 10;
+
+async function getData(page) {
   "use server";
-  const data = await sql`SELECT * FROM public.rsvp`;
-  return { rows: data.rows, count: data.rowCount };
-}
-
-function Table({ rows }) {
-  return (
-    <div>
-      <div className='mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='sm:flex sm:items-center'>
-          <div className='sm:flex-auto'>
-            <h1 className='text-base font-semibold leading-6 text-gray-900'>
-              RSVP
-            </h1>
-            <p className='mt-2 text-sm text-gray-700'>Tutte le rispose</p>
-          </div>
-        </div>
-      </div>
-      <div className='mt-8 flow-root overflow-hidden'>
-        <div className='mx-auto px-4 sm:px-6 lg:px-8'>
-          <table className='w-full text-left'>
-            <thead className='bg-white'>
-              <tr>
-                <th
-                  scope='col'
-                  className='relative isolate py-3.5 pr-3 text-left text-sm font-semibold text-gray-900'
-                >
-                  Nome
-                </th>
-                <th
-                  scope='col'
-                  className='hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell'
-                >
-                  Confermato
-                </th>
-                <th
-                  scope='col'
-                  className='hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell'
-                >
-                  # Ospiti
-                </th>
-                <th
-                  scope='col'
-                  className='hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 md:table-cell'
-                >
-                  Email
-                </th>
-                <th
-                  scope='col'
-                  className='hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 md:table-cell'
-                >
-                  Telefono
-                </th>
-                <th
-                  scope='col'
-                  className='px-3 py-3.5 text-left text-sm font-semibold text-gray-900'
-                >
-                  Navetta
-                </th>
-                <th
-                  scope='col'
-                  className='px-3 py-3.5 text-left text-sm font-semibold text-gray-900'
-                >
-                  Note
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r) => (
-                <tr key={r.id}>
-                  <td className='relative py-4 pr-3 text-sm font-medium text-gray-900'>
-                    {r.name}
-                    <div className='absolute bottom-0 right-full h-px w-screen bg-gray-100' />
-                    <div className='absolute bottom-0 left-0 h-px w-screen bg-gray-100' />
-                  </td>
-                  <td className='px-3 py-4 text-sm text-gray-500'>
-                    {r.is_coming ? (
-                      <CheckIcon className='h-5 w-5 text-green-500' />
-                    ) : (
-                      <XMarkIcon className='h-5 w-5 text-main' />
-                    )}
-                  </td>
-                  <td className='px-3 py-4 text-sm text-gray-500'>{r.count}</td>
-                  <td className='px-3 py-4 text-sm text-gray-500'>{r.email}</td>
-                  <td className='px-3 py-4 text-sm text-gray-500'>{r.phone}</td>
-                  <td className='px-3 py-4 text-sm text-gray-500'>
-                    {r.needs_transportation ? (
-                      <CheckIcon className='h-5 w-5 text-green-500' />
-                    ) : (
-                      <XMarkIcon className='h-5 w-5 text-main' />
-                    )}
-                  </td>
-                  <td className='px-3 py-4 text-sm text-gray-500'>{r.notes}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  );
+  const data = await sql`SELECT * FROM public.rsvp LIMIT ${PAGE_SIZE} OFFSET ${
+    PAGE_SIZE * (page - 1)
+  }`;
+  const countQueryResult = await sql`SELECT COUNT(*) FROM public.rsvp`;
+  return { rows: data.rows, count: countQueryResult.rows[0].count };
 }
 
 export default async function Admin({ searchParams }) {
   if (searchParams.password !== process.env.VERCEL_ADMIN_PASSWORD) {
     return <>Forbidden</>;
   }
-  const { rows } = await getData();
+  const page = parseInt(searchParams.page) ?? 1;
 
-  return <Table rows={rows} />;
+  const { rows, count } = await getData(page);
+
+  return <Table rows={rows} count={count} page={page} pageSize={PAGE_SIZE} />;
 }
